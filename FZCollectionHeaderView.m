@@ -2,8 +2,8 @@
 //  FZCollectionHeaderView.m
 //  FZCalenderPickerDemo
 //
-//  Created by zhangxue on 16/6/22.
-//  Copyright © 2016年 zhangxue. All rights reserved.
+//  Created by Goyakod on 16/6/22.
+//  Copyright © 2016年 . All rights reserved.
 //
 
 #import "FZCollectionHeaderView.h"
