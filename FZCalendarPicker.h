@@ -1,11 +1,30 @@
-# ZXDatePicker
-一个简单的日历控件
+//
+//  FZCalendarPicker.h
+//  FZCalenderPickerDemo
+//
+//  Created by zhangxue on 16/6/22.
+//  Copyright © 2016年 zhangxue. All rights reserved.
+//
 
-##How to use?
+#import <UIKit/UIKit.h>
 
-**支持属性**
+@class FZCalendarPicker;
 
-```
+@protocol FZCalendarDelegate <NSObject>
+
+/**
+ *  返回选择的时间
+ *
+ *  @param picker     时间选择选择器
+ *  @param dateString 格式为yyyy-MM-dd
+ */
+- (void)picker:(FZCalendarPicker *)picker didSelectedDate:(NSString *)dateString;
+
+
+@end
+
+
+@interface FZCalendarPicker : UIView
 
 /**
  *  最多可以显示距今多少天的有效日期, 默认20天
@@ -44,14 +63,3 @@
 - (void)reloadDatePicker;
 
 @end
-
-```
-
-###代码创建：
-```
-FZCalendarPicker *picker = [[FZCalendarPicker alloc] initWithFrame:self.view.bounds];
-    [self.view addSubview:picker];
-    //从今天算起有效日期100天
-    picker.validDays = 100;
-
-```
