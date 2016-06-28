@@ -1,14 +1,14 @@
 //
-//  FZCalendarCell.m
-//  FZCalenderPickerDemo
+//  ZXCalendarCell.m
+//  
 //
 //  Created by Goyakod on 16/6/22.
-//  Copyright © 2016年 . All rights reserved.
+//  Copyright © 2016年 Goyakod. All rights reserved.
 //
 
-#import "FZCalendarCell.h"
+#import "ZXCalendarCell.h"
 
-@implementation FZCalendarCell
+@implementation ZXCalendarCell
 
 - (instancetype)initWithFrame:(CGRect)frame
 {

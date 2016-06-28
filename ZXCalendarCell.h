@@ -1,14 +1,13 @@
 //
-//  FZCalendarCell.h
-
+//  ZXCalendarCell.h
 //
 //  Created by Goyakod on 16/6/22.
-//  Copyright © 2016年 . All rights reserved.
+//  Copyright © 2016年 Goyakod. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface FZCalendarCell : UICollectionViewCell
+@interface ZXCalendarCell : UICollectionViewCell
 
 /**
  *  显示日期的标签

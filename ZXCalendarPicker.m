@@ -1,21 +1,21 @@
 //
-//  FZCalendarPicker.m
-//  FZCalenderPickerDemo
+//  ZXCalendarPicker.m
+//  
 //
 //  Created by Goyakod on 16/6/22.
-//  Copyright © 2016年 . All rights reserved.
+//  Copyright © 2016年 Goyakod. All rights reserved.
 //
 
-#import "FZCalendarPicker.h"
+#import "ZXCalendarPicker.h"
 
-#import "FZCalendarCell.h"
-#import "FZCollectionHeaderView.h"
+#import "ZXCalendarCell.h"
+#import "ZXCollectionHeaderView.h"
 
 
 static NSString * const reuseIdentifier = @"ChooseTimeCell";
 static NSString * const headerIdentifier = @"headerIdentifier";
 
-@interface FZCalendarPicker() <UICollectionViewDelegate,UICollectionViewDataSource>
+@interface ZXCalendarPicker() <UICollectionViewDelegate,UICollectionViewDataSource>
 
 @property (nonatomic, strong) UICollectionView *collectionView;
 @property (nonatomic, strong) NSDateFormatter  *formatter;
@@ -29,7 +29,7 @@ static NSString * const headerIdentifier = @"headerIdentifier";
 
 @end
 
-@implementation FZCalendarPicker
+@implementation ZXCalendarPicker
 
 #pragma mark --- 初始化
 - (NSTimeZone*)timeZone
@@ -170,8 +170,8 @@ static NSString * const headerIdentifier = @"headerIdentifier";
     _collectionView.dataSource      = self;
     _collectionView.backgroundColor = [UIColor whiteColor];
     [_collectionView setCollectionViewLayout:layout animated:YES];
-    [_collectionView registerClass:[FZCalendarCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    [_collectionView registerClass:[FZCollectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerIdentifier];
+    [_collectionView registerClass:[ZXCalendarCell class] forCellWithReuseIdentifier:reuseIdentifier];
+    [_collectionView registerClass:[ZXCollectionHeaderView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerIdentifier];
     
     [self addSubview:_collectionView];
 }
@@ -204,7 +204,6 @@ static NSString * const headerIdentifier = @"headerIdentifier";
     NSRange range = [calendar rangeOfUnit:NSCalendarUnitDay inUnit:NSCalendarUnitMonth forDate:dayDate];
     
     return range.length;
-    
 }
 
 /**
@@ -346,7 +345,7 @@ static NSString * const headerIdentifier = @"headerIdentifier";
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    FZCalendarCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+    ZXCalendarCell *cell =[collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
     
     NSDate *dateList = [self getPriousorLaterDateFromDate:_date withMonth:indexPath.section];
     
@@ -385,7 +384,7 @@ static NSString * const headerIdentifier = @"headerIdentifier";
 {
     if ([kind isEqualToString:UICollectionElementKindSectionHeader]) {
         
-        FZCollectionHeaderView * headerCell = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerIdentifier forIndexPath:indexPath];
+        ZXCollectionHeaderView * headerCell = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:headerIdentifier forIndexPath:indexPath];
         NSArray *dateArry = [self timeString:_date many:indexPath.section];
         [headerCell.titleLabel setText:[NSString stringWithFormat:@"%@年%@月",dateArry[0],dateArry[1]]];
         [headerCell.titleLabel setBackgroundColor:self.headerBgColor];

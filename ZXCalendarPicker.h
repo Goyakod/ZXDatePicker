@@ -1,14 +1,13 @@
 //
-//  FZCalendarPicker.h
-//  FZCalenderPickerDemo
+//  ZXCalendarPicker.h
 //
 //  Created by Goyakod on 16/6/22.
-//  Copyright © 2016年 . All rights reserved.
+//  Copyright © 2016年 Goyakod. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@class FZCalendarPicker;
+@class ZXCalendarPicker;
 
 @protocol FZCalendarDelegate <NSObject>
 
@@ -18,13 +17,13 @@
  *  @param picker     时间选择选择器
  *  @param dateString 格式为yyyy-MM-dd
  */
-- (void)picker:(FZCalendarPicker *)picker didSelectedDate:(NSString *)dateString;
+- (void)picker:(ZXCalendarPicker *)picker didSelectedDate:(NSString *)dateString;
 
 
 @end
 
 
-@interface FZCalendarPicker : UIView
+@interface ZXCalendarPicker : UIView
 
 /**
  *  最多可以显示距今多少天的有效日期, 默认20天
