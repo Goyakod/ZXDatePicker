@@ -355,7 +355,7 @@ static NSString * const headerIdentifier = @"headerIdentifier";
     
     NSString *str;
     
-    str = p > 0 ? [NSString stringWithFormat:@"%ld",p]:@"";
+    str = p > 0 ? [NSString stringWithFormat:@"%ld",(long)p]:@"";
     
     NSArray *list = @[ array[0], array[1], str];
     NSString *timeString = [list componentsJoinedByString:@"-"];
@@ -414,7 +414,7 @@ static NSString * const headerIdentifier = @"headerIdentifier";
     
     NSString *str;
     
-    str = p > 0 ? [NSString stringWithFormat:@"%ld",p]:@"";
+    str = p > 0 ? [NSString stringWithFormat:@"%ld",(long)p]:@"";
     
     NSArray *list = @[ array[0], array[1], str];
     NSString *timeString = [list componentsJoinedByString:@"-"];
@@ -432,12 +432,12 @@ static NSString * const headerIdentifier = @"headerIdentifier";
     NSInteger p = indexPath.row -[self getMonthBeginAndEndWith:dateList].intValue+1;
     NSArray *array = [self timeString:_date many:indexPath.section];
     
-    NSString *str = [NSString stringWithFormat:@"%ld",p];
+    NSString *str = [NSString stringWithFormat:@"%ld",(long)p];
     self.selectedTime = [NSString stringWithFormat:@"%@-%@-%@",array[0],array[1],str];
     [collectionView reloadData];
     
     if ([self.delegate respondsToSelector:@selector(picker:didSelectedDate:)]) {
-        NSString *callBackStr = p < 10 ? [NSString stringWithFormat:@"0%ld",p]:[NSString stringWithFormat:@"%ld",p];
+        NSString *callBackStr = p < 10 ? [NSString stringWithFormat:@"0%ld",(long)p]:[NSString stringWithFormat:@"%ld",(long)p];
         [self.delegate picker:self didSelectedDate:[NSString stringWithFormat:@"%@-%@-%@",array[0],array[1],callBackStr]];
     }
 }
